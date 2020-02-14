@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="/static/webpage/css/materialize.min.css"  media="screen,projection"/>
+      <script type="text/javascript" src="/static/webpage/js/materialize.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body style="background-image: url(https://raw.githubusercontent.com/DrKakku/Small-projects/master/index1.jpg);">
+    
+        <nav>
+            <div class="nav-wrapper orange lighten-1">
+              <a href="#" class="brand-logo">
+                <img src="{% static 'webpage/img/logobig.png' %}" style="margin-top: -30;">
+              </a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down orange lighten-1">
+                <li><a href="sass.html">Home</a></li>
+                <li><a href="badges.html">About us</a></li>
+                <li><a href="collapsible.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+          {% for i in typeof %}
+          
+          <div class="row" style="width:420px; left:20px; display: inline-block; margin-right: 40px;">
+            <div class="col s12 m4" style="width:100%;">
+              <div class="card center-align large ">
+                <div class="card-image hoverable center-align">
+                  <img src="{{ i.pic.url }}">
+                  <span class="card-title" ><h2 style="color: black;">{{ i.typeof }}</span></h2>
+                </div>
+                <div class="card-content">
+                  <h5>{{i.description}}</h5>
+                </div>
+                <div class="card-action">
+                  <a href="{{i.myurl}}"><h6 style="color: blue;" class="flow-text">Click Here</a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+          
+            {% endfor %}
+
+            
+          </div> 
+          
+
+         
+
+          
+  <script>
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();</script>
+
+
+
+          
+
+
+          
+     
+    </body>
+
+  </html>
