@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DareDevil</title>
-    <meta name="description" content="">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-</head>
+{% load static %}
+<html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="/static/webpage/css/materialize.min.css"  media="screen,projection"/>
+      <script type="text/javascript" src="/static/webpage/js/materialize.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
 <body class="red lighten-1">
 
@@ -28,76 +18,113 @@
 
     </div>
 
-
-    <div class="center-align">
-        <div id="learn">
-            <div class="row" style="width:420px; left:20px; display: inline-block; margin-right: 40px;">
-                <div class="col s12 m4" style="width:100%;">
-                    <div class="card-panel hoverable">
-                        <div class="card-image">
-                            <img class="responsive-img" src="DaredivelBg.jpg">
-                            <span class="card-title">Learn Science Facts</span>
-
-
-
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                If You want to learn how the world works and how the nature intracts with us and other things click on me <br> <a href="science.html">Click Here</a> </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    
         <div class="row" style="width:420px; left:20px; display: inline-block; margin-right: 40px;">
             <div class="col s12 m4" style="width:100%;">
                 <div class="card">
-                    <div class="card-image">
-                        <img src="images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
+                    <div class="card-image small hoverable">
+                        <img src="{% static 'webpage/img/note.jpg' %}">
+                        <span class="card-title"><h2 style="color: black;">Note Reading</span></h2>
                     </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    <div class="card-content hoverable">
+                        <p>Press here to learn how to read the braille of notes and currency!</p>
                     </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
+                    <div class="card-action hoverable">
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">This is a link</a>
                     </div>
                 </div>
             </div>
         </div>
 
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 style="color: tomato;">Note Reading</h4>
+      <h4>This will guide you to help you recognize the value of the note.</h4>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KsYRbFbbwXI" 
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+          
+        
 
-        <div class="row" style="width:420px; left:20px; display: inline-block; margin-right: 40px;">
-            <div class="col s12 m4" style="width:100%;">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
+        
+  <div class="row" style="width:420px; left:20px; display: inline-block; margin-right: 40px;">
+    <div class="col s12 m4" style="width:100%;">
+        <div class="card">
+            <div class="card-image small hoverable">
+                <img src="{% static 'webpage/img/famous.jpg' %}">
+                <span class="card-title"><h2 style="color: white;">Famous Blind people</span></h2>
+            </div>
+            <div class="card-content hoverable">
+                <p>Press here to learn about famous blind people!</p>
+            </div>
+            <div class="card-action hoverable">
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal2">This is a link</a>
             </div>
         </div>
     </div>
+</div>
+
+
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+              <h4 style="color: tomato;">Famous blind people</h4>
+              <h4>Learn more about famous blind people who were big revolutionists!</h4>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/1yRPfyS_LfA" frameborder="0"
+               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
+
+
+
+          <div class="row" style="width:420px; left:20px; display: inline-block; margin-right: 40px;">
+            <div class="col s12 m4" style="width:100%;">
+                <div class="card">
+                    <div class="card-image small hoverable">
+                        <img src="{% static 'webpage/img/social.jpg' %}">
+                        <span class="card-title"><h2 style="color: white;">Social Skills</span></h2>
+                    </div>
+                    <div class="card-content hoverable">
+                        <p>It's tough for people to understand your physical disability. Learn how to become socially better at  interacting here!</p>
+                    </div>
+                    <div class="card-action hoverable">
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal3">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+              <h4 style="color: tomato;">Social Skills</h4>
+              <h4>This will guide you become a better social being.</h4>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/H_m0ESrkQkY" frameborder="0"
+               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
+
     <audio id="sound" preload="auto">
     <source src="Science.mp3">
 </audio>
 
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- for hovering feature -->
-    <script type="text/javascript" src="hover.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+  });</script>
+  <script>  M.AutoInit();</script>
 
 </body>
 

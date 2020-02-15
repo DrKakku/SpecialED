@@ -5,14 +5,29 @@
       <link type="text/css" rel="stylesheet" href="/static/webpage/css/materialize.min.css"  media="screen,projection"/>
       <script type="text/javascript" src="/static/webpage/js/materialize.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+      
     </head>
 
     <body style="background-image: url(https://raw.githubusercontent.com/DrKakku/Small-projects/master/index1.jpg);">
-    
+
+      <script>
+        function play() {
+            var audio = document.getElementById("science");
+            audio.play();
+        }
+
+        function pause() {
+            var audio = document.getElementById("science");
+            audio.pause();
+        }
+    </script>
+
         <nav>
-            <div class="nav-wrapper orange lighten-1">
+            <div value="PLAY" onmouseenter=play() onfocus=play() onmouseleave="pause()" blurr="pause() class="nav-wrapper orange lighten-1">
               <a href="#" class="brand-logo">
-                <img src="{% static 'webpage/img/logobig.png' %}" style="margin-top: -30;">
+                <img src="{% static 'webpage/img/logobig.png' %}" style="margin-top: -30;"  >
               </a>
               <ul id="nav-mobile" class="right hide-on-med-and-down orange lighten-1">
                 <li><a href="sass.html">Home</a></li>
@@ -27,14 +42,14 @@
             <div class="col s12 m4" style="width:100%;">
               <div class="card center-align large ">
                 <div class="card-image hoverable center-align">
-                  <img src="{{ i.pic.url }}">
+                  <img src="{{ i.pic.url }}" value="PLAY" onmouseover=play() onmouseleave=pause()  >
                   <span class="card-title" ><h2 style="color: black;">{{ i.typeof }}</span></h2>
                 </div>
                 <div class="card-content">
                   <h5>{{i.description}}</h5>
                 </div>
                 <div class="card-action">
-                  <a href="{{i.myurl}}"><h6 style="color: blue;" class="flow-text">Click Here</a></h6>
+                  <a href="{{i.myurl}}" value="PLAY"  onfocus="play()"  onblur="pause()"><h6 style="color: blue;" class="flow-text">Click Here</a></h6>
                   </div>
                 </div>
               </div>
@@ -49,20 +64,58 @@
           
 
          
+          {% for i in typeof %}
+          <audio id="science" preload="auto">
+          <source src="{{ MEDIA_URL }}Audio/main.mp3">
+      </audio>{% endfor %}
+          
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!-- for hovering feature -->
+      <script type="text/javascript" src="hover.js"></script>
+      <script>
+          
+          var tag = document.createElement('script');
+  
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+         
+          var player;
+  
+          function onYouTubeIframeAPIReady() {
+              player = new YT.Player('player', {
+  
+                  events: {
+                      'onReady': onPlayerReady,
+                      'onStateChange': onPlayerStateChange
+                  }
+              });
+          }
+  
+        
+          function onPlayerReady(event) {
+              event.target.playVideo();
+          }
+  
+          
+          var done = false;
+  
+          function onPlayerStateChange(event) {
+              if (event.data == YT.PlayerState.PLAYING && !done) {
+                  setTimeout(stopVideo, 6000);
+                  done = true;
+              }
+          }
+  
+          function stopVideo() {
+              player.stopVideo();
+          }
+      </script>
+  
 
           
-  <script>
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();</script>
 
-
-
-          
-
-
-          
-     
     </body>
 
   </html>
